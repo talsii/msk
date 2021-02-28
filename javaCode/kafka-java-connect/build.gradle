@@ -1,0 +1,15 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.kafka:kafka-clients:2.4.1'
+}
+
+application {
+    mainClassName = 'com.amazon.kafkaJavaConnect.Main'
+}
