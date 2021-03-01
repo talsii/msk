@@ -8,7 +8,7 @@ cat <<EOF
 {
     "name": "${connector}",
     "config": {
-        "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+        "connector.class": "io.confluent.connect.s3.S3SourceConnector",
         "topics": "${topic}",
         "s3.region": "eu-west-1",
         "s3.bucket.name": "talsii.kafka.connect.source",
