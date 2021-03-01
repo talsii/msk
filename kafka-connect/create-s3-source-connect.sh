@@ -10,7 +10,7 @@ cat <<EOF
     "config": {
         "connector.class": "org.apache.kafka.connect.file.FileStreamSourceConnector",
         "topic": "${topic}",
-        "file": "/home/ec2-user/input.txt",
+        "file": "/home/ec2-user/input.csv",
         "value.converter": "org.apache.kafka.connect.storage.StringConverter"
     }
 }
