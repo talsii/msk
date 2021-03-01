@@ -8,14 +8,21 @@ cat <<EOF
 {
     "name": "${connector}",
     "config": {
-        "connector.class": "io.confluent.connect.s3.source.S3SourceConnector",
+        "connector.class":"io.confluent.connect.s3.source.S3SourceConnector",
+        "tasks.max":"1",
+        "s3.region":"eu-west-1",
         "topics": "${topic}",
-        "s3.region": "eu-west-1",
-        "tasks.max": 1,
-        "s3.bucket.name": "talsii.kafka.connect.source",
-        "format.class": "io.confluent.connect.s3.format.avro.AvroFormat",
-        "schema.compatibility": "NONE",
-        "confluent.topic.bootstrap.servers": "b-2.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-3.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-1.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092"
+        "s3.bucket.name":"kafka-connect-example",
+        "format.class":"io.confluent.connect.s3.format.avro.AvroFormat",
+        "partitioner.class":"io.confluent.connect.storage.partitioner.DefaultPartitioner",
+        "schema.compatibility":"NONE",
+        "transforms":"AddPrefix",
+        "transforms.AddPrefix.type":"org.apache.kafka.connect.transforms.RegexRouter",
+        "transforms.AddPrefix.regex":".*",
+        "transforms.AddPrefix.replacement":"copy_of_$0",
+        "confluent.license":"",
+        "confluent.topic.bootstrap.servers":""b-2.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-3.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-1.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092"",
+        "confluent.topic.replication.factor":"3"
     }
 }
 EOF
