@@ -10,7 +10,7 @@ cat <<EOF
     "config": {
         "connector.class": "org.apache.kafka.connect.file.FileStreamSourceConnector",
         "topic": "${topic}",
-        "file": "/home/ec2-user/input.csv",
+        "file": "/home/ec2-user/input.txt",
         "value.converter": "org.apache.kafka.connect.storage.StringConverter"
     }
 }
@@ -19,7 +19,7 @@ EOF
 
 echo "Creating s3 source connector:  ${connector} ..."
 
-curl -X POST http://10.10.1.26:8083/connectors \
+curl -X POST http://localhost:8083/connectors \
 -H 'Accept: */*' \
 -H 'Content-Type: application/json' \
 -d "$(generate_body)"
@@ -27,5 +27,6 @@ curl -X POST http://10.10.1.26:8083/connectors \
 sleep 5
 
 echo "Checking s3 source connector: ${connector} ..."
-curl http://10.10.1.26:8083/connectors/${connector} | jq .
+curl http://localhost:8083/connectors/${connector} | jq .
+
 
