@@ -8,7 +8,7 @@ cat <<EOF
 {
     "name": "${connector}",
     "config": {
-        "connector.class": "io.confluent.connect.s3.source.S3SourceConnector",
+        "connector.class": "io.confluent.connect.s3.S3SourceConnector",
         "topics": "${topic}",
         "s3.region": "eu-west-1",
         "tasks.max": 1,
