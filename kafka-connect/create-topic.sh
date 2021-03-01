@@ -6,5 +6,4 @@ topic=${1}
 partitions=${2}
 replication_factor=${3}
 echo "Creating topic ${topic} with ${partitions} and a replication factor of ${replication_factor} .."
-#kafka-topics --bootstrap-server ${bootstrap_servers} --create --topic connect_file --partitions 10 --replication-factor 3
-
+kafka-topics --bootstrap-server ${bootstrap_servers} --create --topic ${topic} --partitions ${partitions} --replication-factor ${replication_factor}
