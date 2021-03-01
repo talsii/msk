@@ -30,5 +30,7 @@ curl -X POST http://10.10.1.26:8083/connectors \
 -H 'Content-Type: application/json' \
 -d "$(generate_body)"
 
+sleep 5
+
 echo "Checking s3 sink connector: ${connector} ..."
 curl http://10.10.1.26:8083/connectors/${connector} | jq .
