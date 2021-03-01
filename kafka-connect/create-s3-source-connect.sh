@@ -21,7 +21,7 @@ cat <<EOF
         "transforms.AddPrefix.regex":".*",
         "transforms.AddPrefix.replacement":"copy_of_$0",
         "confluent.license":"",
-        "confluent.topic.bootstrap.servers":""b-2.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-3.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-1.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092"",
+        "confluent.topic.bootstrap.servers":""b-2.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-3.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-1.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092",
         "confluent.topic.replication.factor":"3"
     }
 }
