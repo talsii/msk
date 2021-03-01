@@ -2,7 +2,7 @@
 
 export bootstrap_servers="b-2.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-3.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092,b-1.msk-eu-west-1.15x4ul.c1.kafka.eu-west-1.amazonaws.com:9092"
 
-topic=${topic}
+topic=${1}
 sink_connector="s3_sink_connector_${topic}"
 source_connector="s3_source_connector_${topic}"
 
