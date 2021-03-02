@@ -13,6 +13,7 @@ cat <<EOF
         "s3.region": "eu-west-1",
         "s3.bucket.name": "talsii.kafka.connect.source",
         "format.class": "io.confluent.connect.s3.format.avro.AvroFormat",
+        "storage.class": "io.confluent.connect.s3.storage.S3Storage",
         "partitioner.class": "io.confluent.connect.storage.partitioner.DefaultPartitioner",
         "schema.compatibility": "NONE",
         "transforms": "AddPrefix",

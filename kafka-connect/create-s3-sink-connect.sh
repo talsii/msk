@@ -15,7 +15,7 @@ cat <<EOF
         "s3.part.size": "5242880",
         "flush.size": 3,
         "value.converter": "org.apache.kafka.connect.storage.StringConverter",
-        "format.class": "io.confluent.connect.s3.format.avro.AvroFormat",
+        "format.class": "io.confluent.connect.s3.format.json.JsonFormat",
         "partitioner.class": "io.confluent.connect.storage.partitioner.DefaultPartitioner",
         "storage.class": "io.confluent.connect.s3.storage.S3Storage"
     }
