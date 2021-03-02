@@ -44,7 +44,7 @@ public class StatelessTransformationsMain {
         final KStream<String, String> source = builder.stream("stateless-transformations-input-topic");
 
         // Split the stream into two streams, one containing all records where the key starts with a and the other containing all other records.
-        KStream<String, String>[] branches = source.branch((key, value) -> key.startsWith("a"), (key, value) -> true);
+        KStream<String, String>[] branches = source.branch((key, value) -> true, (key, value) -> true);
         KStream<String, String> aKeysStream = branches[0];
         KStream<String, String> othersStream = branches[1];
 
